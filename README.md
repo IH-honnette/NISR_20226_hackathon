@@ -36,6 +36,3 @@ Household-level table built from EICV7 poverty, housing, person, savings, credit
 
 ## Limitations
 Cross-sectional survey: shows association, not causation or poverty dynamics. Programme receipt is self-reported for the last 12 months. AUC near 0.8 makes this a screening aid, not a replacement for field verification.
-
-## AI-assistance disclosure
-An AI assistant (Claude) helped debug and restructure the code and draft the documentation. The team reviewed and ran the work and is responsible for it.
