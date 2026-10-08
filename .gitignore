@@ -6,3 +6,5 @@ Cross_Section/
 *.dta
 .ipynb_checkpoints/
 __pycache__/
+config.bat
+node_modules
