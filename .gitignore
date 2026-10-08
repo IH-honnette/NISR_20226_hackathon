@@ -1,0 +1,8 @@
+# NISR microdata is not redistributed here - download it from statistics.gov.rw
+Microdata/
+Microdata_unzipped/
+Cross_Section/
+*.zip
+*.dta
+.ipynb_checkpoints/
+__pycache__/

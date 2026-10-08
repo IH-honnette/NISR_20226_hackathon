@@ -1,0 +1,185 @@
+{
+  "n_households": 15054,
+  "poverty_rate_popwt": 27.37,
+  "extreme_rate_popwt": 5.44,
+  "poverty_rate_unweighted": 23.79,
+  "n_poor_households": 3581,
+  "n_extreme_households": 628,
+  "poverty_by_ur": {
+    "Rural": 31.6,
+    "Urban": 16.7
+  },
+  "poverty_by_province": {
+    "Eastern Province": 26.8,
+    "Kigali City": 9.1,
+    "Northern Province": 20.2,
+    "Southern Province": 34.7,
+    "Western Province": 37.4
+  },
+  "fin_table": {
+    "Any bank / mobile-money account": {
+      "share of households with it": 0.888,
+      "poverty rate | yes": 0.256,
+      "poverty rate | no": 0.465
+    },
+    "Mobile-money (Momo/Mokash) account": {
+      "share of households with it": 0.803,
+      "poverty rate | yes": 0.243,
+      "poverty rate | no": 0.435
+    },
+    "SACCO / microfinance account": {
+      "share of households with it": 0.477,
+      "poverty rate | yes": 0.247,
+      "poverty rate | no": 0.302
+    },
+    "Commercial / cooperative bank": {
+      "share of households with it": 0.238,
+      "poverty rate | yes": 0.081,
+      "poverty rate | no": 0.339
+    },
+    "Tontine / savings group": {
+      "share of households with it": 0.731,
+      "poverty rate | yes": 0.264,
+      "poverty rate | no": 0.307
+    },
+    "Tried to borrow (denial recorded)": {
+      "share of households with it": 0.055,
+      "poverty rate | yes": 0.308,
+      "poverty rate | no": 0.272
+    },
+    "Currently owes money": {
+      "share of households with it": 0.679,
+      "poverty rate | yes": 0.271,
+      "poverty rate | no": 0.281
+    }
+  },
+  "sp_coverage": {
+    "Non-poor": {
+      "VUP Direct Support (cash)": 2.4,
+      "Classic Public Works": 1.8,
+      "Expanded Public Works": 1.7,
+      "Nutrition-sensitive Direct Support": 2.9,
+      "Any of the four programmes": 8.6
+    },
+    "Moderately poor": {
+      "VUP Direct Support (cash)": 3.7,
+      "Classic Public Works": 3.9,
+      "Expanded Public Works": 3.1,
+      "Nutrition-sensitive Direct Support": 4.4,
+      "Any of the four programmes": 14.2
+    },
+    "Extremely poor": {
+      "VUP Direct Support (cash)": 3.5,
+      "Classic Public Works": 6.5,
+      "Expanded Public Works": 3.5,
+      "Nutrition-sensitive Direct Support": 4.9,
+      "Any of the four programmes": 17.2
+    }
+  },
+  "vup_ds_coverage": {
+    "Non-poor": 2.4,
+    "Moderately poor": 3.7,
+    "Extremely poor": 3.5
+  },
+  "account_by_quintile": {
+    "Poor": 80.8,
+    "Poor/mid": 85.7,
+    "Mid": 87.8,
+    "Mid/upper": 90.9,
+    "Upper": 96.0
+  },
+  "n_features_tabular": 66,
+  "ablation": {
+    "rf_auc_with_fin": 0.7762,
+    "rf_auc_without_fin": 0.7569,
+    "lr_auc_with_fin": 0.7895,
+    "lr_auc_without_fin": 0.7683
+  },
+  "leakage_lr_auc_with_quintile": 0.9775,
+  "top_importance": {
+    "hh_size": 0.0457,
+    "has_internet": 0.0281,
+    "province": 0.0159,
+    "n_accounts": 0.0127,
+    "hh_has_bank": 0.01,
+    "has_electricity": 0.0094,
+    "head_education": 0.0086,
+    "n_children": 0.004
+  },
+  "fin_importance": {
+    "hh_has_account": 0.0001,
+    "hh_uses_digital": -0.0002,
+    "hh_has_sacco_mfi": 0.0011,
+    "hh_has_bank": 0.01,
+    "hh_in_tontine": 0.0025,
+    "n_accounts": 0.0127,
+    "hh_credit_constrained": 0.0,
+    "hh_owes_money": 0.0001
+  },
+  "nn_extreme_auc": 0.7219,
+  "tb_summary": {
+    "train": {
+      "graph_keras_model": 1,
+      "scalars": 17,
+      "histograms": 21
+    },
+    "validation": {
+      "scalars": 16
+    },
+    "test": {
+      "scalars": 7,
+      "images": 2,
+      "text": 1
+    },
+    "run root": {
+      "hparams": 2
+    }
+  },
+  "tb_log_dir": "logs/fit/20261008-235447",
+  "models": {
+    "Logistic regression": {
+      "roc_auc": 0.7895,
+      "avg_precision": 0.5385,
+      "roc_auc_popweighted": 0.7939,
+      "accuracy": 0.6852,
+      "precision": 0.4145,
+      "recall": 0.759,
+      "f1": 0.5362
+    },
+    "Random forest": {
+      "roc_auc": 0.7762,
+      "avg_precision": 0.5128,
+      "roc_auc_popweighted": 0.7766,
+      "accuracy": 0.6722,
+      "precision": 0.4015,
+      "recall": 0.7479,
+      "f1": 0.5225
+    },
+    "Neural net (1 epoch)": {
+      "roc_auc": 0.7401,
+      "avg_precision": 0.4287,
+      "roc_auc_popweighted": 0.7388,
+      "accuracy": 0.6646,
+      "precision": 0.3882,
+      "recall": 0.6925,
+      "f1": 0.4975
+    }
+  },
+  "splits": {
+    "train": 9634,
+    "val": 2409,
+    "test": 3011
+  },
+  "hparams": {
+    "embed_dim": 4,
+    "units_1": 64,
+    "units_2": 32,
+    "dropout_1": 0.3,
+    "dropout_2": 0.2,
+    "learning_rate": 0.001,
+    "aux_loss_weight": 0.3,
+    "batch_size": 128,
+    "epochs": 1
+  },
+  "nn_params": 5109
+}
